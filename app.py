@@ -25,6 +25,7 @@ app = Litestar(
         render_plugins=[
             ScalarRenderPlugin(),
         ],
+        path="/api"
     )
 )
 
