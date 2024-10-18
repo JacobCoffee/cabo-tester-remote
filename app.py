@@ -4,12 +4,21 @@
 #     "litestar[standard],
 #   ]
 # ///
-
+from litestar import get
 from litestar.app import Litestar
 from litestar.openapi import OpenAPIConfig
 from litestar.openapi.plugins import ScalarRenderPlugin
 
+@get("/_health")
+def health_check() -> dict:
+    return {"status": "ok"}
+
+@get()
+def home() -> str:
+    return "Hello, world!"
+
 app = Litestar(
+    route_handlers=[home, health_check],
     openapi_config=OpenAPIConfig(
         title="Litestar API",
         version="1.0.0",
