@@ -1,1 +1,1 @@
-web: uv run uvicorn app:app --host 0.0.0.0 --port $PORT
+web: uv run uvicorn app:app --uds /var/run/cabotage/cabotage.sock
