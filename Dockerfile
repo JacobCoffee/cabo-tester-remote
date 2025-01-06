@@ -5,4 +5,4 @@ ADD . /app
 WORKDIR /app
 RUN uv sync --frozen
 
-CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9999"]
